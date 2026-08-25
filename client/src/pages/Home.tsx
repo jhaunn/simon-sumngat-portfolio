@@ -133,8 +133,10 @@ const projects = [
     type: "Systems / Web",
     title: "Lorenzo Ruiz Academy\nGrade Management System V2",
     description:
-      "A PERN-based rebuild for academic operations, shaped around maintainability, scalable data flow, and a more intuitive daily experience.",
+      "A PERN-based rebuild for academic operations, shaped around maintainability, scalable data flow, and a more intuitive grade management experience.",
     stack: ["Supabase", "Express.js", "React.js", "Node.js"],
+    demo: null,
+    repo: "https://github.com/jhaunn/LRA-GMS-V2",
     image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1600&q=86",
     accent: "Featured build",
   },
@@ -143,18 +145,22 @@ const projects = [
     type: "Research / Computer Vision",
     title: "Semantic-VJEPA\n/ SemVJEPA",
     description:
-      "Representation-learning research with utilities for dataset manipulation, feature visualization, and interpretability workflows.",
-    stack: ["Python", "V-JEPA", "Representation Learning"],
+      "thesis work extending the original V-JEPA by introducing a semantic masking strategy that replaces the default random masking mechanism used in self-supervised video representation learning..",
+    stack: ["Python", "V-JEPA", "Self-Supervised Learning", "Representation Learning"],
+    demo: null,
+    repo: "https://github.com/AjDesuuu/Semantic-VJEPA",
     image: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1600&q=86",
     accent: "Research thread",
   },
   {
     number: "03",
     type: "Interactive / Unity",
-    title: "Game Prototypes\n& Game Jam Systems",
+    title: "Game Prototypes\n& Game Jam Submission",
     description:
-      "Complete solo prototypes built to sharpen systems thinking — from core mechanics and UI systems to basic animation and art.",
-    stack: ["C#", "Unity", "Game Systems"],
+      "Complete solo prototypes built from core mechanics and UI systems to basic animation and art.",
+    stack: ["C#", "Unity"],
+    demo: "https://nomiiii.itch.io",
+    repo: "https://github.com/jhaunn",
     image: "https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=1600&q=86",
     accent: "Long-running practice",
   },
@@ -342,8 +348,8 @@ export default function Home() {
                     <p>{project.description}</p>
                     <div className="project-stack">{project.stack.map((item) => <span key={item}>{item}</span>)}</div>
                     <div className="project-actions">
-                      <ExternalAction label="Demo link" primary onClick={() => showNotice("This project is not publicly deployed yet. Ask Simon for a walkthrough.")} />
-                      <a className="inline-action" href="https://github.com/jhaunn" target="_blank" rel="noreferrer">Repo / profile <Github size={14} strokeWidth={1.8} /></a>
+                      <ExternalAction label="Demo link" primary onClick={() => project.demo != null ? window.location.href = project.demo.toString() : showNotice("This project is not publicly deployed yet. Ask Simon for a walkthrough.")} />
+                      <a className="inline-action" href={project.repo} target="_blank" rel="noreferrer">Repo / profile <Github size={14} strokeWidth={1.8} /></a>
                     </div>
                   </div>
                 </motion.article>
