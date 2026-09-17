@@ -86,16 +86,16 @@ function HeroMotionVisual() {
       <motion.div className="hero-core" style={{ x: coreX, y: coreY }} animate={prefersReducedMotion ? undefined : { scale: [1, 1.08, 1], opacity: [0.72, 1, 0.72] }} transition={pulse}>
         <span />
       </motion.div>
-      <motion.div className="hero-signal hero-signal-one" style={{ x: orbitX }} animate={prefersReducedMotion ? undefined : { opacity: [0.35, 0.9, 0.35] }} transition={{ ...pulse, duration: 3.6 }} />
-      <motion.div className="hero-signal hero-signal-two" style={{ x: orbitTwoX }} animate={prefersReducedMotion ? undefined : { opacity: [0.25, 0.75, 0.25] }} transition={{ ...pulse, duration: 4.2, delay: 0.4 }} />
-      <svg className="hero-circuit" viewBox="0 0 760 520" fill="none">
+      {/* <motion.div className="hero-signal hero-signal-one" style={{ x: orbitX }} animate={prefersReducedMotion ? undefined : { opacity: [0.35, 0.9, 0.35] }} transition={{ ...pulse, duration: 3.6 }} />
+      <motion.div className="hero-signal hero-signal-two" style={{ x: orbitTwoX }} animate={prefersReducedMotion ? undefined : { opacity: [0.25, 0.75, 0.25] }} transition={{ ...pulse, duration: 4.2, delay: 0.4 }} /> */}
+      {/* <svg className="hero-circuit" viewBox="0 0 760 520" fill="none">
         <motion.path d="M28 374H176L228 322H388L431 365H722" stroke="rgba(218,41,28,.82)" strokeWidth="2" initial={{ pathLength: 0, opacity: 0 }} animate={{ pathLength: 1, opacity: 1 }} transition={{ duration: 1.8, delay: 0.4 }} />
         <motion.path d="M122 95H260L317 152V259H500L566 193H730" stroke="rgba(218,41,28,.52)" strokeWidth="1" initial={{ pathLength: 0, opacity: 0 }} animate={{ pathLength: 1, opacity: 1 }} transition={{ duration: 2.2, delay: 0.9 }} />
         <motion.path d="M446 20V124L408 162V282" stroke="rgba(248,247,244,.3)" strokeWidth="1" initial={{ pathLength: 0, opacity: 0 }} animate={{ pathLength: 1, opacity: 1 }} transition={{ duration: 1.4, delay: 1.1 }} />
         <circle cx="388" cy="322" r="5" fill="#da291c" />
         <circle cx="500" cy="259" r="4" fill="#f8f7f4" />
         <circle cx="260" cy="95" r="4" fill="#da291c" />
-      </svg>
+      </svg> */}
     </motion.div>
   );
 }
@@ -133,11 +133,11 @@ const projects = [
     type: "Systems / Web",
     title: "Lorenzo Ruiz Academy\nGrade Management System V2",
     description:
-      "A PERN-based rebuild for academic operations, shaped around maintainability, scalable data flow, and a more intuitive grade management experience.",
+      "A PERN-based Grade Management System for academic operations, shaped around maintainability, scalable data flow, and a more intuitive grade management experience.",
     stack: ["Supabase", "Express.js", "React.js", "Node.js"],
-    demo: null,
+    demo: "https://lra-gms-v2-nu.vercel.app",
     repo: "https://github.com/jhaunn/LRA-GMS-V2",
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1600&q=86",
+    image: "/lra-gms.jpg",
     accent: "Featured build",
   },
   {
@@ -149,7 +149,7 @@ const projects = [
     stack: ["Python", "V-JEPA", "Self-Supervised Learning", "Representation Learning"],
     demo: null,
     repo: "https://github.com/AjDesuuu/Semantic-VJEPA",
-    image: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1600&q=86",
+    image: "/vjepa.jpg",
     accent: "Research thread",
   },
   {
@@ -161,7 +161,7 @@ const projects = [
     stack: ["C#", "Unity"],
     demo: "https://nomiiii.itch.io",
     repo: "https://github.com/jhaunn",
-    image: "https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=1600&q=86",
+    image: "/game-jam.png",
     accent: "Long-running practice",
   },
 ];
@@ -288,13 +288,13 @@ export default function Home() {
       <main id="main-content">
         <section className="hero" id="top">
           <HeroMotionVisual />
-          <HeroStatusPanel />
+          {/* <HeroStatusPanel /> */}
           <div className="hero-shade" aria-hidden="true" />
           <div className="hero-grid-overlay" aria-hidden="true" />
           <motion.div className="hero-copy" style={{ y: heroCopyY }}>
             <motion.div initial="hidden" animate="visible" variants={stagger} className="hero-content">
               <motion.div variants={reveal} className="eyebrow"><span className="eyebrow-pin" /> Software Engineer · Imus, Philippines</motion.div>
-              <motion.h1 variants={reveal}>Somewhere<br />everything is <em>connected</em></motion.h1>
+              <motion.h1 variants={reveal}>Somewhere<br />everything is<br/><em>connected</em></motion.h1>
               <motion.p variants={reveal} className="hero-lede">Hi, I'm Simon, a Computer Science Graduate and Software Engineer, I like making things, understanding the systems behind them, and following ideas until they become something real. This space is a collection of the things I’ve built, learned, and left a little trace of.</motion.p>
               <motion.div variants={reveal} className="hero-actions">
                 <a className="hero-button" href="#work">View selected work <ArrowRight size={16} strokeWidth={1.8} aria-hidden="true" /></a>
